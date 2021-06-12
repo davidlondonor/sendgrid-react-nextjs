@@ -10,6 +10,10 @@ export default function Home() {
       if (!field.name) return;
       formData[field.name] = field.value;
     });
+    fetch("/api/mail", {
+      method: "post",
+      body: JSON.stringify(formData),
+    });
     console.log(formData, "mirando data");
   }
 
@@ -21,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Tangerine"
+          href="https://fonts.googleapis.com/css?family=Roboto"
         />
       </Head>
 
